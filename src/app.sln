@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{985D32B3-11BB-42C4-AA73-021757099886}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{9753D1E3-41C3-4981-993B-50CEB86C3D0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Api", "Services\Catalog\Catalog.Api\Catalog.Api.csproj", "{DAC233F4-CDE9-44BD-A227-22A7DE043053}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.Domain", "Services\Catalog\Catalog.Domain\Catalog.Domain.csproj", "{6A6CE1A0-03E6-46FC-A842-EC7ABCFC3776}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAC233F4-CDE9-44BD-A227-22A7DE043053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC233F4-CDE9-44BD-A227-22A7DE043053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC233F4-CDE9-44BD-A227-22A7DE043053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC233F4-CDE9-44BD-A227-22A7DE043053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A6CE1A0-03E6-46FC-A842-EC7ABCFC3776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A6CE1A0-03E6-46FC-A842-EC7ABCFC3776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A6CE1A0-03E6-46FC-A842-EC7ABCFC3776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A6CE1A0-03E6-46FC-A842-EC7ABCFC3776}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9753D1E3-41C3-4981-993B-50CEB86C3D0F} = {985D32B3-11BB-42C4-AA73-021757099886}
+		{DAC233F4-CDE9-44BD-A227-22A7DE043053} = {9753D1E3-41C3-4981-993B-50CEB86C3D0F}
+		{6A6CE1A0-03E6-46FC-A842-EC7ABCFC3776} = {9753D1E3-41C3-4981-993B-50CEB86C3D0F}
+	EndGlobalSection
+EndGlobal
