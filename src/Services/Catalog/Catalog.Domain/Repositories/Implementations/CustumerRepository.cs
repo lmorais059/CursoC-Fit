@@ -1,33 +1,41 @@
-using Catalog.Domain.Repositorires.Interfaces;
+using Catalog.Domain.Repositories.Interfaces;
 using Catalog.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
-
-        ###Comentários pragma teste
-
-
-namespace Catalog.Domain.Repositorires.Implementations{
-
+namespace Catalog.Domain.Repositories.Implementations
+{
     internal sealed class CustomerRepository : ICustomerRepository
     {
-        public Task<Customer> CreateAsync(Customer customer)
+
+        private DbContext Database { get; }
+
+        public CustomerRepository(DbContext database)
         {
-            throw new NotImplementedException();
+            Database = database;
         }
 
-        public Task<IEnumerable<Customer>> GetAllAsync()
+        public async Task<Customer> CreateAsync(Customer customer)
         {
-            throw new NotImplementedException();
+            await Database.AddAsync(customer); // Create Customer
+            await Database.SaveChangesAsync(); // Save Customer
+
+            return customer;
         }
 
-        public Task<Customer> GetByIdAsync(Guid id)
+        public async Task<IEnumerable<Customer>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await Database.Set<Customer>().ToListAsync();
         }
 
-        public Task UpdateAsync(Customer customer)
+        public async Task<Customer?> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            return await Database.Set<Customer>().FirstOrDefaultAsync(customer => customer.Id == id);
+        }
+
+        public async Task UpdateAsync(Customer customer)
+        {
+            Database.Update(customer);
+            await Database.SaveChangesAsync();
         }
     }
 }
-
