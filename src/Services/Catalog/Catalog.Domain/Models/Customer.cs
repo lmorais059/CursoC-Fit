@@ -1,3 +1,6 @@
+using System.Net;
+using Catalog.Domain.Errors;
+
 namespace Catalog.Domain.Models
 {
     public sealed class Customer
@@ -8,7 +11,7 @@ namespace Catalog.Domain.Models
         {
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email))
             {
-                throw new ArgumentNullException("Invalid data");
+                throw new AppError("Invalid data", HttpStatusCode.BadRequest);
             }
 
             return new() { Name = name, Email = email };
@@ -18,7 +21,7 @@ namespace Catalog.Domain.Models
         {
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email))
             {
-                throw new ArgumentException("Invalid data");
+                throw new AppError("Invalid data", HttpStatusCode.BadRequest);
             }
 
             Name = name;
